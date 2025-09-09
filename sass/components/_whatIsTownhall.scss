@@ -1,0 +1,173 @@
+.whatIsTownhall{
+    .content{
+        @include respond(maxWidth992){
+            margin-bottom: 3rem;
+        }
+        @include respond(minWidth992){
+            padding-right: 4rem;
+        }
+    }
+    .joyfulGrid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+        padding-top: 3rem;
+        &__Item{
+            grid-column: span 3;   
+        }
+
+        @include respond(minWidth575){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond(minWidth992){
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include respond(minWidth1200){
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    }
+}
+.townhallThumb {
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    &__shape {
+        img {
+            position: absolute;
+            z-index: -1;
+            transition: $transition;
+        }
+
+        .imgOne {
+            bottom: -25px;
+            left: -30px;
+            animation: jumpping 5s linear 0s infinite alternate;
+        }
+
+        .imgTwo {
+            bottom: -47px;
+            right: 1%;
+        }
+
+        .imgThree {
+            top: -50px;
+            right: 10%;
+        }
+    }
+
+    &__big {
+        position: relative;
+        @include respond(maxWidth575){
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        img {
+            max-width: 400px;
+            max-height: 460px;
+            border-radius: 40px 4px 40px 4px;
+            box-shadow: 0px 30px 60px 0px rgba(1, 11, 60, 0.14);
+            transition: $transition;
+            @include respond(maxWidth575){
+                max-width: 100%;
+                height: auto;
+                max-height: none;
+            }
+        }
+    }
+
+    &__small {
+        @include respond(maxWidth768){
+            display: none;
+        }
+        @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+                margin-left: -30px;
+        }
+
+        margin-top: 50px;
+        display: block;
+
+        img {
+            max-width: 200px;
+            max-height: 240px;
+            transition: $transition;
+            border-radius: 4px 40px 4px 40px;
+            box-shadow: 0px 30px 60px 0px rgba(1, 11, 60, 0.14);
+        }
+    }
+
+}
+.iconBox{
+    box-shadow: $boxShadowThree;
+    height: 100%;
+    border-radius: 1.6rem;
+    background: rgba($colorSecondary, $alpha: 0.05);
+    padding: 1rem 1.6rem;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    transition: $transition;
+    &:hover{
+        background: $colorSecondary;
+        color: $colorWhite;
+        transform: translateY(-3px);
+        .icon{
+            background: $colorWhite;
+            outline: 2px solid $colorWhite;
+    border: 2px solid $colorSecondary;
+            img{
+                filter: none!important;
+            }
+        }
+        .heading-tertiary{
+            color: $colorWhite;
+        }
+    }
+    .icon{
+        @include respond(maxWidth575){
+            margin: 0 auto 2rem;
+            width: 8rem;
+        }
+        @include respond(minWidth575){
+            max-width: 6.5rem;
+        flex: 0 0 6.5rem;
+        }
+    background: $colorSecondary;
+    position: relative;
+    top: 15px;
+    border-radius: 100%;
+    border: 2px solid $colorWhite;
+    outline: 2px solid $colorSecondary;
+    aspect-ratio: 1 / 1;
+        padding: 15px;
+        img{
+            max-width: 100%;
+    filter: brightness(300);
+        }
+    }
+    .joyContent{
+        @include respond(maxWidth575){
+            text-align: center;
+            margin: 0 auto;
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+        }
+        @include respond(minWidth575){
+            max-width: calc(100% - 6.5rem);
+        flex: 0 0 calc(100% - 6.5rem);
+        }
+        padding-left: 1rem;
+        .heading-tertiary{
+            margin-bottom: 0.5rem;
+            transition: $transition;
+        }
+        p{
+            transition: $transition;
+        }
+    }
+}

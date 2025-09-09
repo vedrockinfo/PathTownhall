@@ -1,0 +1,364 @@
+.m-bottom {
+  margin-bottom: 7rem;
+
+  @include respond(maxWidth992) {
+    margin-bottom: 5rem;
+  }
+
+  @include respond(maxWidth768) {
+    margin-bottom: 3rem;
+  }
+}
+
+.m-top {
+  margin-top: 7rem;
+
+  @include respond(maxWidth992) {
+    margin-top: 5rem;
+  }
+
+  @include respond(maxWidth768) {
+    margin-top: 3rem;
+  }
+}
+
+.p-bottom {
+  padding-bottom: 7rem;
+
+  @include respond(maxWidth992) {
+    padding-bottom: 5rem;
+  }
+
+  @include respond(maxWidth768) {
+    padding-bottom: 3rem;
+  }
+}
+
+.p-top {
+  padding-top: 7rem;
+
+  @include respond(maxWidth992) {
+    padding-top: 5rem;
+  }
+
+  @include respond(maxWidth768) {
+    padding-top: 3rem;
+  }
+}
+
+.space-one {
+  height: 8rem;
+
+  @include respond(maxWidth992) {
+    height: 3rem;
+  }
+
+  @include respond(maxWidth768) {
+    height: 2.5rem;
+  }
+}
+
+.space-two {
+  height: 7rem;
+
+  @include respond(maxWidth992) {
+    height: 5rem;
+  }
+
+  @include respond(maxWidth768) {
+    height: 3rem;
+  }
+}
+
+.space-three {
+  height: 2.5rem;
+
+  @include respond(maxWidth992) {
+    height: 2rem;
+  }
+
+  @include respond(maxWidth768) {
+    height: 1.5rem;
+  }
+}
+
+.primaryList {
+  li {
+    position: relative;
+    padding-left: 12.5px;
+
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+    }
+
+    &:before {
+      content: "\f111";
+      color: $colorBlack;
+      position: absolute;
+      top: 7.5px;
+      left: -5px;
+      font: normal normal normal 8px/1 FontAwesome;
+    }
+  }
+}
+
+.footerList {
+  li {
+    position: relative;
+    padding-left: 0;
+
+    a {
+      border-bottom: 1px solid rgba($colorText, $alpha: 0.5);
+      padding: 1rem;
+    }
+
+    &:last-child a {
+      border-bottom: none;
+    }
+
+    &:before {
+      content: "\f0a4";
+      color: $colorText;
+      position: absolute;
+      top: 40%;
+      left: -20px;
+      font: normal normal normal 14px/1 FontAwesome;
+    }
+  }
+}
+
+.alfasF {
+  text-transform: lowercase;
+  font-family: $fontTertiary;
+  font-style: oblique;
+  font-size: 7rem;
+}
+
+.zoomIn {
+  position: relative;
+  height: 100%;
+
+  &::before,
+  &::after {
+    content: "";
+    background-image: url(../../images/icon/sharp-bg.png);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    transform: scale(0.9);
+    mix-blend-mode: multiply;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(0.844, 0.8);
+  }
+}
+
+.owl-carousel.owl-theme .owl-nav {
+  text-align: right;
+
+  .owl-prev,
+  .owl-next {
+    width: 4.8rem;
+    height: 4.8rem;
+    border: 2px solid;
+    border-color: $colorPrimary;
+    background: transparent;
+    border-radius: 100%;
+
+    i {
+      color: $colorPrimary;
+    }
+  }
+}
+
+.img-box {
+  position: relative;
+  height: 100%;
+
+  .img-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 100%;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      opacity: 1;
+      z-index: 3;
+      transform: rotate(5deg);
+    }
+
+    &::before {
+      top: -10%;
+      right: 51%;
+      bottom: -10%;
+      left: 50%;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &::after {
+      top: 50%;
+      right: -10%;
+      bottom: 50%;
+      left: -10%;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    &:hover {
+      &::before {
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: all 900ms linear;
+      }
+
+      &::after {
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: all 900ms linear;
+      }
+      img{
+        transform: scale(1.15);
+      }
+    }
+
+    img {
+      transition: all 2s ease;
+      transform: scale(1.1);
+      height: 100%;
+      object-fit: cover;
+      object-position: right;
+      box-shadow: $boxShadow;
+    }
+  }
+
+  .shape-dotted {
+    width: 83px;
+    height: 176px;
+    background: radial-gradient(circle, transparent 20%, var(--dot-bg, #fff) 20%, var(--dot-bg, #fff) 80%, transparent), radial-gradient(circle, transparent 20%, var(--dot-bg, #fff) 20%, var(--dot-bg, #fff) 0%, var(--dot-color, #707070)) var(--dot-size, 5.8px) var(--dot-size, 5.8px);
+    background-color: var(--dot-bg, #fff);
+    background-size: calc(var(--dot-size, 5.8px) * 2) calc(var(--dot-size, 5.8px) * 2);
+    z-index: -1;
+    animation: jumpping 6s infinite linear;
+    position: absolute;
+    left: -5%;
+    bottom: 8%;
+  }
+}
+
+.strcnt{
+  color: $colorWhite;
+    display: inline-block;
+    background: $colorPrimary;
+    padding: 10px;
+}
+
+.imgWrapper{
+  overflow: hidden;
+  &:not(.border0){
+  &:hover{
+    img{
+      transform: scale(1.1);
+    }
+  }
+}
+  img{
+    transition: $transition;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.innerSection{
+  position: relative;
+  height: 200px;
+  display: grid;
+  background: $colorPrimary;
+  place-content: center;
+  .container{
+    position: relative;
+  }
+  h1{
+    text-align: center;
+    font-weight: bold;
+    color: $colorWhite;
+    text-transform: uppercase;
+    font-family: $fontTertiary;
+    font-size: 4.8rem;
+  }
+}
+.border-one{
+  width: 20rem;
+  border-radius: 5px;
+  margin: 2rem auto 3rem;
+  height: 3px;
+  background: $colorWhite;
+}
+.blog-sidebar {
+  box-shadow: $boxShadow;
+  position: sticky;
+  top: 1rem;
+  padding: 1rem 2rem 2rem;
+    .heading-tertiary {
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .border-one{
+      background: $colorPrimary;
+      width: 5rem;
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .recent-post {
+
+            a {
+                color: $colorPrimary;
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+                display: inline-block;
+            }
+
+            .meta {
+              font-size: 1.2rem;
+              font-weight: normal;
+              color: rgba($colorText, $alpha: 0.5);
+              border-top: 1px solid;
+              padding-top: 0.5rem;
+            }
+
+            .meta-publish {font-size: 1.2rem;
+              font-weight: normal;
+              color: rgba($colorText, $alpha: 0.5); text-align: right;margin-bottom: 0;border-top: 1px solid;}
+
+
+            em {font-size: 1.2rem;
+              font-weight: normal;
+              color: rgba($colorText, $alpha: 0.5); text-align: right;display: block;border-bottom: 1px solid;}
+        }
+}
+.row{
+  @include respond (maxWidth768){
+    row-gap: 2rem;
+  }
+}

@@ -1,0 +1,155 @@
+// header {
+//   &.fixed-top {
+//     background: $colorWhite;
+//     box-shadow: 0 2px 0 rgba($colorPrimary, $alpha: 0.2);
+//     animation: slidetop;
+//     animation-duration: .6s;
+
+//     .logoImg {
+//       opacity: 1 !important;
+//       visibility: visible !important;
+//       display: block;
+//       padding: 0.3rem 0;
+//     }
+//   }
+
+//   position: absolute;
+  
+//   top: 0;
+//   width: 100%;
+//   z-index: 99;
+
+//   .headerGrid {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+
+//     .logo {
+//       max-width: 25rem;
+//       flex: 0 0 25rem;
+
+//       .logoImg {
+//         opacity: 0;
+//         visibility: hidden;
+//       }
+
+//       img {
+//         width: 7rem;
+//       }
+//     }
+
+//     .navMenu {
+//       max-width: calc(100% - 25rem);
+//       flex: 0 0 calc(100% - 25rem);
+
+//       input[type=checkbox],
+//       label {
+//         position: absolute;
+//         transform: scale(0);
+//         opacity: 0;
+//         visibility: hidden;
+
+//         @include respond (minWidth992) {
+//           display: none;
+//         }
+//       }
+
+//       @include respond (maxWidth992){
+//         .mobileMenu {
+//         position: fixed;
+//         z-index: 999;
+//         background: #fff;
+//         height: 100vh;
+//         left: 0;
+//         top: 0;
+//         .menu{  
+//             li{
+//               &:not(:last-child){
+//                 a{
+//                   padding-bottom: 1rem;
+//                   display: block;
+//                 }
+//               }
+//             }
+//         }
+//       }
+//       }
+
+//       .mobileLogo {
+//         @include respond (minWidth992) {
+//           display: none;
+//         }
+
+//         width: 10rem;
+//       }
+
+//       ul {
+//         display: flex;
+//         align-items: center;
+//         justify-content: flex-end;
+//         margin-bottom: 0;
+//         padding-left: 0;
+
+//         @include respond (maxWidth992) {
+//           flex-direction: column;
+//           align-items: flex-start;
+//           justify-content: flex-start;
+//         }
+
+//         li {
+//           a {
+//             text-transform: capitalize;
+//             color: $colorPrimary;
+//             font-weight: 600;
+//             font-size: 1.6rem;
+//             padding: 0.75rem 1.2rem;
+//             transition: all 0.4s;
+
+//             &.active {
+//               color: $colorWhite;
+//               background: rgba($colorPrimary, $alpha: 1);
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+.myHeader{
+  padding: 10px 0;
+  &.fixed-top {
+    background: $colorWhite;
+    box-shadow: 0 2px 0 rgba($colorPrimary, $alpha: 0.2);
+    animation: slidetop;
+    animation-duration: .6s;
+
+    .logoImg {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block;
+      padding: 0.3rem 0;
+    }
+  }
+  .headerGrid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__item{
+      &:first-child{
+        max-width: 25rem;
+      flex: 0 0 25rem;
+
+      img {
+        width: 7rem;
+      }
+      }
+    }
+  }
+  #backtohome{
+    @include BtnOne();
+  }
+}
